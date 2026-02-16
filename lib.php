@@ -10,9 +10,6 @@ require_once(__DIR__ . '/classes/quizcustom.php');
  * @param MoodleQuickForm $mform The form instance
  */
 
-// Toggle: set to true to hide UI, false to show UI for all users
-$CFG->local_publictestlink_hide_ui = false;
-
 function local_publictestlink_coursemodule_standard_elements($formwrapper, $mform) {
     // Get current module info
     $current = $formwrapper->get_current();

@@ -1,8 +1,8 @@
 <?php
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Public Test Link';
-
+$string['pluginname'] = 'Public Test Link';$string['hide_ui'] = 'Hide UI for public users';
+$string['hide_ui_desc'] = 'Hide Moodle header and sidebar for guests and non-logged-in users accessing public quizzes';
 $string['makequizpublic'] = 'Make quiz public';
 $string['makequizpublic_desc'] = 'Allow anyone with the link to access this quiz without logging in';
 

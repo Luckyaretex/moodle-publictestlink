@@ -15,13 +15,13 @@ class hook_callbacks {
      * @param before_footer_html_generation $hook
      */
     public static function before_footer_html_generation(before_footer_html_generation $hook): void {
-        global $CFG, $PAGE;
+        global $PAGE;
 
         // \core\notification::add('real', \core\output\notification::NOTIFY_SUCCESS);
 
-        // Check setting from config.php - this is the primary source
-        // If not set in config, default to true (hide UI)
-        $hide_ui = isset($CFG->local_publictestlink_hide_ui) && $CFG->local_publictestlink_hide_ui;
+        // Check setting from admin settings - fetched from database
+        // If not set, default to true (hide UI)
+        $hide_ui = get_config('local_publictestlink', 'hide_ui') !== false ? (bool)get_config('local_publictestlink', 'hide_ui') : true;
 
         // Add current setting as an HTML comment into the footer (do not echo before DOCTYPE).
         $hook->add_html("<!-- PublicTestLink: hide_ui = " . ($hide_ui ? 'true' : 'false') . " -->\n");
